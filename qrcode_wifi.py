@@ -93,22 +93,25 @@ def main():
 
     args = parser.parse_args()
 
-    # print(args)
-
+    # Check whether a passphrase was provided by the user. If not, then create one.
     if not args.passphrase:
         passphrase = generate_passphrase(args.length)
     else:
         passphrase = args.passphrase
 
+    # Check whether the wireless network is hidden or not. If hidden, set it to hidden.
     if args.hidden:
         hidden = "true"
     else:
         hidden = "false"
 
+    # Create the string that will be used to generate a QR code later on.
     qr_string = generate_qrstring(args.ssid, args.protocol, passphrase, hidden)
 
+    # Generate a QR code with previous created string and name the file after given SSID.
     generate_qrcode(args.ssid, qr_string)
 
+    # Show the results.
     print("SSID         : {0}".format(args.ssid))
     print("Passphrase   : {0}".format(passphrase))
     print("QR Code      : {0}".format(qr_string))
