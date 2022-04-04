@@ -6,11 +6,11 @@ specific.
 
 The capture file will be store in the following format.
 
-~ -+- general   -+- eear1
-   |             +- erbr9
+~ -+- general   -+- host1
+   |             +- host9
    |
-   +- projectXY -+- ejbr1
-                 +- ejbr10
+   +- projectXY -+- host11
+                 +- host19
 """
 
 __author__ = "Kryno Bosman"
